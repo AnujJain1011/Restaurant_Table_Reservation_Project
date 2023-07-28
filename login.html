@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+  <html lang="en">
+    <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+      <title>
+        Login Page
+      </title>
+      <link rel="stylesheet" href="login.css">
+    </head>
+    <body >
+       <div class="hero">
+        <div class="form-box">
+            <div class="button-box">
+                <div id="btn"></div>
+                 <button type="button" class="toggle-btn" onclick="login()">Log In</button>
+                 <button type="button" class="toggle-btn" onclick="register()">Register</button>
+                </div>
+                <!-- <div class="social-icons">
+                    <img src="fb.png">
+                    <img src="tw.png">
+                    <img src="gp.png">
+                </div> -->
+                <form action="/login" method="POST" id="login" class="input-groupl" >
+                  <input type="text" pattern="[789][0-9]{9}" name="mobile" class="input-field" placeholder="Mobile No." required>
+                  <input type="password" name="password" class="input-field" placeholder="Enter Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>  
+                  <!-- <input type="checkbox" class="check-box"><span>Remember Password</span> -->
+                 <button type="submit" class="submit-btn">Login</button>        
+              </form>
+
+                <form action="/signup_success" method="POST" id="register" class="input-groupr">
+                    <input type="text" name="name" class="input-field" placeholder="Full Name"  required>
+                    <input type="email" name="email" class="input-field" placeholder="Email Id" required>
+                    <input type="text" pattern="[789][0-9]{9}" name="phno" class="input-field" placeholder="Mobile No." required>
+                    <input type="password" name="password" class="input-field" placeholder="Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
+                    <!-- <input type="checkbox" class="check-box"><span>Terms & conditions</span> -->
+                    <p id="para">Already Registered ? <a href="login.html" id="log">Login Here</a></p>
+                   <button onclick ="window.location.href="signup_success.html"" type="submit" class="submit-btn">Register</button>        
+                 </form>
+
+            </div>
+           
+
+        </div>
+       </div>
+       <script>
+        var x=document.getElementById("login");
+        var y=document.getElementById("register");
+        var z=document.getElementById("btn");
+        function register(){
+            x.style.left="-400px";
+            y.style.left="0px";
+            z.style.left="110px";
+
+        }
+        function login(){
+            x.style.left="10px";
+            y.style.left="450px";
+            z.style.left="0px";
+
+        }
+
+       </script>
+    </body>
+</html>
